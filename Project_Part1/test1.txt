@@ -1,0 +1,24 @@
+start{
+  real x;
+  real y;
+  real z;
+
+  print("Enter x:");
+  input(x);
+
+  print("Enter y:");
+  input(y);
+
+  print("Enter z:");
+  input(z);
+
+  while( (x == 0) || (y == 0) || (z == 0) ){
+    print("Please enter only non-zero values.");
+    input(x);
+    input(y);
+    input(z);
+  };
+
+  print(x * y * z);
+};
+end

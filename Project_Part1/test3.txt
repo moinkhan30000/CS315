@@ -1,0 +1,74 @@
+start {
+
+    /* 
+     * Aether Language Test Program
+     * ----------------------------
+     * This program demonstrates the core features of Aether, including:
+     * - Variable declarations (real, bool, list)
+     * - Arithmetic operations (addition, multiplication, division, exponentiation)
+     * - Boolean logic with 001 (true) and 000 (false)
+     * - Conditional statements (if-else)
+     * - Looping structures (for, while)
+     * - Function definition and calling
+     * - List manipulation and indexing
+     * - Printing both values and string literals
+     * 
+     * Aether enforces strict real-number typing, 
+     * so booleans are represented as 001 (true) and 000 (false).
+     * Numbers can be written as whole numbers (e.g., 1) or with floating points (e.g., 1.5).
+     */
+
+    // Declare and initialize real variables with both whole and floating-point numbers
+    real x = 5;
+    real y = 10.25;
+    real z = 3.5;
+    
+    // Perform arithmetic operations
+    real sum = x + y + z;
+    real product = x * y * z;
+    real quotient = y / z;
+    real power = x ^ 2;
+
+    // Declare boolean values using 001 (true) and 000 (false)
+    bool isGreater = 001;  // True
+    bool isSmaller = 000;  // False
+    
+    // Print computed values
+    print("Sum:", sum);
+    print("Product:", product);
+    print("Quotient:", quotient);
+    print("Power of x^2:", power);
+    
+    // Conditional check using boolean values
+    if (x < y) {
+        print("x is less than y");
+    } else {
+        print("x is greater than or equal to y");
+    }
+    
+    // Declare and initialize a list with both whole and floating-point numbers
+    list numbers = [1, 2.5, 3, 4.75, 5];
+
+    // Loop through the list using a for loop
+    for (real i = 0 :: i < 5 :: i = i + 1) {
+        print("List item:", numbers[i]);
+    }
+    
+    // Define a function to add two real numbers
+    function add(real a, real b) {
+        return a + b;
+    }
+    
+    // Call the function and store the result
+    real result = add(x, y);
+    print("Function result (x + y):", result);
+    
+    // Demonstrate a while loop
+    real counter = 0;
+    while (counter < 3) {
+        print("Counter value:", counter);
+        counter++;
+    }
+    
+}; end
+
