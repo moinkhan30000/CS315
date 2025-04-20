@@ -1,0 +1,547 @@
+//Program 1
+start{
+real x;
+  	real y;
+  	real z;
+
+  	print("Enter x:");
+  	input(x);
+
+  	print("Enter y:");
+  	input(y);
+
+  	print("Enter z:");
+  	input(z);
+
+  	while( (x == 0) || (y == 0) || (z == 0) ){
+    		print("Please enter only non-zero values.");
+    		input(x);
+    		input(y);
+    		input(z);
+  	};
+ 
+  	print(x * y * z);
+
+};
+end
+
+// Program 2
+
+start{
+  	function foo(real p, real q){
+    		print("Function name: foo");
+    		print("Parameter p = ", p);
+    		print("Parameter q = ", q);
+
+    	if( p > q ){
+      	return p;
+    	};
+    	return q;
+  	};
+
+  	list list_1 = [3.15, 7, 0.03, 1.7]; 
+  	list list_2 = [9, -1.2, 1.2]; 
+
+  	real a;
+  	real b;
+  	real c;
+  	real i;
+  	real j;
+
+  	for(i = 0 :: i < 4 :: i = i + 1){
+    		a = list_1[i]; 
+
+    		for(j = 0 :: j < 3 :: j = j + 1){
+      		b = list_2[j]; 
+      		c = foo(a, b);
+      		print("a=", a, ", b=", b, ", c=", c);
+    		};
+  	};
+};
+end
+
+
+// Program 3
+
+start {
+
+/* 
+     * Aether Language Test Program
+     * ----------------------------
+     * This program demonstrates the core features of Aether, including:
+     * - Variable declarations (real, bool, list)
+     * - Arithmetic operations (addition, multiplication, division, exponentiation)
+     * - Boolean logic with 001 (true) and 000 (false)
+     * - Conditional statements (if-else)
+     * - Looping structures (for, while)
+     * - Function definition and calling
+     * - List manipulation and indexing
+     * - Printing both values and string literals
+     * 
+     * Aether e
+nforces strict real-number typing, 
+     * so booleans are represented as 001 (true) and 000 (false).
+     * Numbers can be written as whole numbers (e.g., 1) or with floating points (e.g., 1.5).
+     */
+
+    // Declare and initialize real variables with both whole and floating-point numbers
+    real x = 5;
+    real y = 10.25;
+    real z = 3.5;
+    
+    // Perform arithmetic operations
+    real sum = x + y + z;
+    real product = x * y * z;
+    real quotient = y / z;
+    real power = x ^ 2;
+
+    // Declare boolean values using 001 (true) and 000 (false)
+    bool isGreater = 001;  // True
+    bool isSmaller = 000;  // False
+    
+    // Print computed values
+    print("Sum:", sum);
+    print("Product:", product);
+    print("Quotient:", quotient);
+    print("Power of x^2:", power);
+    
+    // Conditional check using boolean values
+    if (x < y) {
+    	   print("x is less than y");
+    } else {
+        print("x is greater than or equal to y");
+    };
+    
+    // Declare and initialize a list with both whole and floating-point numbers
+    list numbers = [1, 2.5, 3.0, 4.75, 5];
+
+    // Loop through the list using a for loop
+
+    for (real i = 0 :: i < 5 :: i = i + 1) {
+        print("List item:", -numbers[i] );
+    };
+    
+    // Define a function to add two real numbers
+    function add(real a, real b) {
+        return a + b;
+    };
+    
+    // Call the function and store the result
+    real result = -add(x, y);
+    print("Function result (x + y):", result);
+    
+    // Demonstrate a while loop
+    real counter = 0;
+    while (counter < 3) {
+        print("Counter value:", counter);
+        counter++;
+    };
+    
+}; end
+
+
+
+// Program 4
+
+
+start {
+
+    /*
+     * Factorial Computation and Logical Operations
+     * --------------------------------------------
+     */
+
+    // Function to compute factorial of a number
+    function factorial(real n) {
+        if (n == 1) {
+            return 1;
+        };
+        return n * factorial(n - 1);
+    };
+
+    // Compute factorial of 5
+    real num = 5;
+    real fact = factorial(num);
+    print("Factorial of", num, ":", fact);
+
+    // Demonstrating boolean operations
+    bool condition1 = 001; // True
+    bool condition2 = 000; // False
+    bool result = condition1 && condition2; 
+
+    if (result) {
+        print("Both conditions are true.");
+    } else {
+        print("At least one condition is false.");
+    };
+
+    // Using a while loop
+    real counter = 1;
+    while (counter <= 3) {
+        print("Counter:", counter);
+        counter = counter + 1;
+    };
+
+    // List demonstration
+    list values = [2, 4, 6, 8, 10];
+
+    for (real i = 0 :: i < 5 :: i = i + 1) {
+        print("List Value:", values[i] * 2);
+    };
+
+}; end
+
+// Program 5
+
+
+start
+{
+    // Declare and initialize real variables
+    real a = 7;
+    real b = 2.5;
+    real c = -3;
+
+    // Declare and initialize a list
+    list myNumbers = [10, 20.5, 30, 40.75, 50];
+
+    // Arithmetic operations
+    real sum = a + b + c;
+    real product = a * b * c;
+    real quotient = a / b;
+
+    // Print arithmetic results
+    print("Sum:", sum);
+    print("Product:", product);
+    print("Quotient:", quotient);
+
+    // Conditional statements
+    if (a > b) {
+         print("a is greater than b");
+    } elseif (a == b) {
+         print("a is equal to b");
+    } else {
+         print("a is less than b");
+    };
+
+    // Loop: print list elements
+    for (real i = 0 :: i < 5 :: i = i + 1) {
+         print("Item at index", i, ":", myNumbers[i]);
+    };
+
+    // Recursive function for factorial
+    function factorial(real n) {
+         if (n <= 1) {
+              return 1;
+         };
+         return n * factorial(n - 1);
+    };
+
+    // Call factorial function
+    real factResult = factorial(5);
+    print("Factorial of 5:", factResult);
+
+    // Check if a number is even
+    function isEven(real num) {
+         if (num % 2 == 0) {
+              return 001; // True
+         } else {
+              return 000; // False
+         };
+    };
+
+    // Test function
+    if (isEven(4)) {
+         print("4 is even");
+    } else {
+         print("4 is odd");
+    };
+
+    // Increment & decrement
+    a++;
+    b--;
+    print("a after increment:", a);
+    print("b after decrement:", b);
+
+    // Input and print
+    input(c);
+    print("Updated c:", c);
+
+    // Function with parameters
+    function weightedSum(real x, real y, real weight) {
+         return (x + y) * weight;
+    };
+
+    print("Weighted sum:", weightedSum(a, c, 0.5));
+
+    // Modify list element
+    myNumbers[2] = 99;
+    print("Updated list item at index 2:", myNumbers[2]);
+
+    print("Program completed.");
+}; end
+
+
+
+
+//ERROR TESTS
+
+//Program 1
+start {
+    real x;
+    real y;
+    real z;
+
+    print("Enter x:");
+    input(x);
+
+    print("Enter y:");
+    input(y);
+
+    print("Enter z:");
+    input(z);
+
+    // ERROR: We removed the closing parenthesis before the curly brace
+    // The original was: while( (x == 0) || (y == 0) || (z == 0) ) {
+    // Now it's missing a closing parenthesis.
+    while( (x == 0) || (y == 0) || (z == 0) { 
+        print("Please enter only non-zero values.");
+        input(x);
+        input(y);
+        input(z);
+    };
+
+    print(x * y * z);
+
+}; 
+end
+
+// Program 2
+
+start {
+    // ERROR: Removed the semicolon after the function definition block
+    // The grammar requires <function_block><END_LINE>, so omitting it breaks syntax.
+
+    function foo(real p, real q) {
+        print("Function name: foo");
+        print("Parameter p = ", p);
+        print("Parameter q = ", q);
+
+        if( p > q ){
+            return p;
+        };
+        return q;
+    } // <-- Semicolon intentionally omitted here!
+
+    list list_1 = [3.15, 7, 0.03, 1.7]; 
+    list list_2 = [9, -1.2, 1.2]; 
+
+    real a;
+    real b;
+    real c;
+    real i;
+    real j;
+
+    for(i = 0 :: i < 4 :: i = i + 1){
+        a = list_1[i]; 
+
+        for(j = 0 :: j < 3 :: j = j + 1){
+            b = list_2[j]; 
+            c = foo(a, b);
+            print("a=", a, ", b=", b, ", c=", c);
+        };
+    };
+};
+end
+
+
+// Program 3
+
+start {
+
+/* 
+     * Aether Language Test Program
+     * ...
+     * Removed extraneous details for brevity
+     */
+
+    real x = 5;
+    real y = 10.25;
+    real z = 3.5;
+    
+    real sum = x + y + z;
+    real product = x * y * z;
+    real quotient = y / z;
+    real power = x ^ 2;
+
+    bool isGreater = 001;  // True
+    bool isSmaller = 000;  // False
+    
+    print("Sum:", sum);
+    print("Product:", product);
+    print("Quotient:", quotient);
+    print("Power of x^2:", power);
+    
+    if (x < y) {
+        print("x is less than y");
+    } else {
+        print("x is greater than or equal to y");
+    };
+
+    list numbers = [1, 2.5, 3.0, 4.75, 5];
+
+    // ERROR: The grammar demands a semicolon (END_LINE) after the block for a for-loop
+    // The original was: for (real i = 0 :: i < 5 :: i = i + 1) { ... };
+    // Now the semicolon after the block is removed.
+    for (real i = 0 :: i < 5 :: i = i + 1) {
+        print("List item:", -numbers[i]);
+    } // <--- Missing semicolon here
+
+    function add(real a, real b) {
+        return a + b;
+    };
+
+    real result = -add(x, y);
+    print("Function result (x + y):", result);
+    
+    real counter = 0;
+    while (counter < 3) {
+        print("Counter value:", counter);
+        counter++;
+    };
+
+}; end
+
+
+
+
+// Program 4
+
+
+start {
+
+    /*
+     * Factorial Computation and Logical Operations
+     */
+
+    function factorial(real n) {
+        if (n == 1) {
+            return 1;
+        };
+        return n * factorial(n - 1);
+    };
+
+    real num = 5;
+    real fact = factorial(num);
+    print("Factorial of", num, ":", fact);
+
+    bool condition1 = 001; // True
+    bool condition2 = 000; // False
+    bool result = condition1 && condition2; 
+
+    // ERROR: The grammar expects <if_statement> to end with a semicolon (END_LINE).
+    // We removed it, which breaks the syntax.
+    if (result) {
+        print("Both conditions are true.");
+    } else {
+        print("At least one condition is false.");
+    } // <-- missing semicolon here!
+
+    real counter = 1;
+    while (counter <= 3) {
+        print("Counter:", counter);
+        counter = counter + 1;
+    };
+
+    list values = [2, 4, 6, 8, 10];
+
+    for (real i = 0 :: i < 5 :: i = i + 1) {
+        print("List Value:", values[i] * 2);
+    };
+
+}; end
+
+// Program 5
+
+start
+{
+    real a = 7;
+    real b = 2.5;
+    real c = -3;
+
+    list myNumbers = [10, 20.5, 30, 40.75, 50];
+
+    real sum = a + b + c;
+    real product = a * b * c;
+    real quotient = a / b;
+
+    print("Sum:", sum);
+    print("Product:", product);
+    print("Quotient:", quotient);
+
+    // ERROR: The grammar requires "if ( expression ) block"
+    // We removed the parentheses in the if statement, causing a syntax error.
+    // Original: if (a > b) { ... } elseif (a == b) { ... } else { ... }
+    if a > b {
+        print("a is greater than b");
+    } elseif (a == b) {
+        print("a is equal to b");
+    } else {
+        print("a is less than b");
+    };
+
+    for (real i = 0 :: i < 5 :: i = i + 1) {
+        print("Item at index", i, ":", myNumbers[i]);
+    };
+
+    function factorial(real n) {
+        if (n <= 1) {
+            return 1;
+        };
+        return n * factorial(n - 1);
+    };
+
+    real factResult = factorial(5);
+    print("Factorial of 5:", factResult);
+
+    function isEven(real num) {
+        if (num % 2 == 0) {
+            return 001;
+        } else {
+            return 000;
+        };
+    };
+
+    if (isEven(4)) {
+        print("4 is even");
+    } else {
+        print("4 is odd");
+    };
+
+    a++;
+    b--;
+    print("a after increment:", a);
+    print("b after decrement:", b);
+
+    input(c);
+    print("Updated c:", c);
+
+    function weightedSum(real x, real y, real weight) {
+        return (x + y) * weight;
+    };
+
+    print("Weighted sum:", weightedSum(a, c, 0.5));
+
+    myNumbers[2] = 99;
+    print("Updated list item at index 2:", myNumbers[2]);
+
+    print("Program completed.");
+}; end
+
+
+
+
+
+
+
+
+
